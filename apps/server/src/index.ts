@@ -1,17 +1,16 @@
-const express = require('express')
-const http = require('http')
+import express ,{Request, Response } from 'express'
+import http from 'http';
+import {Server , Socket} from 'socket.io';
+import cors from 'cors';
+import * as dotenv from 'dotenv';
+import {SOCKET_EVENTS}  from '@chat/shared';
 
-const { Server}  = require('socket.io')
-const cors = require('cors')
-require('dotenv').config();
+
 
 const app = express()
 app.use(cors())
 app.use(express.json())
-
 const server = http.createServer(app)
-
-const {SOCKET_EVENTS}  = require('@chat/shared')
 
 const io = new Server(server, {
   cors: {
@@ -19,12 +18,12 @@ const io = new Server(server, {
   }
 });
 
-app.get('/',(req,res) =>{
+app.get('/',(req :Request ,res:Response) =>{
   res.send('chat server running')
 })
 
 io.on('connection',(socket) =>{
-  socket.on( SOCKET_EVENTS.JOIN_ROOM ,(roomId) =>{
+  socket.on( SOCKET_EVENTS.JOIN_ROOM ,(roomId :string) =>{
     socket.join(roomId)
     console.log(`User joined room: ${roomId}`);
   })
