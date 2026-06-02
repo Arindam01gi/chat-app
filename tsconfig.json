@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                          /* Set the target ECMAScript version */
+    "module": "NodeNext",                        /* Required for modern TypeScript 6 module generation */
+    "moduleResolution": "NodeNext",              /* Fixes the TS5109 and TS5107 deprecation errors */
+    "outDir": "./dist",                          /* Directs the compiled .js output files to /dist */
+    "rootDir": "./src",                          /* Directs the compiler to look only inside /src */
+    "strict": true,                              /* Enables strict type-checking for enterprise safety */
+    "noImplicitAny": true,                       /* Prevents accidental variables falling back to 'any' */
+    "esModuleInterop": true,                     /* Allows seamless importing of CommonJS modules like Express */
+    "skipLibCheck": true,                        /* Speeds up compilation by skipping third-party type definitions */
+    "forceConsistentCasingInFileNames": true     /* Prevents OS-specific casing mismatches on file imports */
+  },
+  "include": ["src/**/*"],                       /* Compiles everything inside your source directory */
+  "exclude": ["node_modules", "dist"]            /* Prevents compiling dependencies and existing build outputs */
+}
