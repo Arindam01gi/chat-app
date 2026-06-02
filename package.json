@@ -1,19 +1,26 @@
 {
   "name": "chat-app",
   "version": "1.0.0",
-  "private": true,
-  "packageManager": "npm@10.8.2",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
-    "lint": "turbo lint",
-    "clean": "turbo clean"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "turbo": "^2.9.3"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arindam01gi/chat-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Arindam01gi/chat-app/issues"
+  },
+  "homepage": "https://github.com/Arindam01gi/chat-app#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.3"
   }
 }
